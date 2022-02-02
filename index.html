@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Score Keeper</title>
+    <script>
+        function incA(){
+            var score = parseInt(document.getElementById("btnScoreA").innerHTML);
+            score++;
+            document.getElementById("btnScoreA").innerHTML = score;
+        }
+
+        function incB(){
+            var score = parseInt(document.getElementById("btnScoreB").innerHTML);
+            score++;
+            document.getElementById("btnScoreB").innerHTML = score;
+        }
+
+        function decA(){
+            var score = parseInt(document.getElementById("btnScoreA").innerHTML);
+            if(score>0)
+            {
+                score--;
+            }
+            document.getElementById("btnScoreA").innerHTML = score;
+        }
+
+        function decB(){
+            var score = parseInt(document.getElementById("btnScoreB").innerHTML);
+            if(score>0)
+            {
+                score--;
+            }
+            document.getElementById("btnScoreB").innerHTML = score;
+        }
+    </script>
+    <style>
+        body{
+            background-image: url('Ball.jpg');
+            background-size: 100% 100%;
+            height: 100vh;
+        }
+        .app-title{
+
+            background-color:lightskyblue;
+            color:black;
+            border-radius: 25px;
+            padding: 20px;
+            text-align: center;
+            margin-left:50px;
+            margin-right: 50px;
+            font-size: 60px;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin:20px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .container-child{
+            border: 1px black solid;
+            width: 400px;
+            height: 450px;
+            padding: 10px;
+            margin: 10px;
+            border-radius:25px;
+            box-shadow: 0px 0px 10px black;
+            transition: 0.3s;
+            
+background-color: #74EBD5;
+background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+
+            
+        }
+
+        .container-child:hover{
+            width: 410px;
+            height: 460px;
+            transform: 0.8s;
+            border: 1px black solid;
+            padding: 10px;
+            margin: 10px;
+            border-radius:25px;
+            box-shadow: 0px 0px 20px white;
+        
+           
+        }
+
+        .team-title{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color:black;
+          
+        }
+        .btnScore{
+           background-color:  white;
+            width: 110px;
+            height: 90px;
+            font-size: 40px;
+            border-radius:20px 20px 20px 20px;
+            margin-left:auto;
+            margin-right:auto;
+            display: block;
+            border:none;
+        }
+        .btnScore:hover{
+    
+            cursor: pointer;
+        }
+        .txtScore{
+            text-align: center;
+            font-size:50px;
+            color:black;
+        }
+        img{
+            height: 60px;
+            width: 60px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1 class="app-title"> <img src=" volleyball.jpg"/> volleyball  Score Board  <img src=" volleyball.jpg"/> </h1>
+
+    <div class="container">
+
+        <div class="container-child">
+            <h2 class="team-title">Team A</h2>
+
+            <button id="btnIncA" class="btnScore" onClick="incA()">+</button>
+
+            <h3 id="btnScoreA" class="txtScore">0</h3>
+
+            <button id="btnDecA" class="btnScore"  onClick="decA();">-</button>
+        </div>
+
+
+        <div class="container-child">
+            <h2 class="team-title">Team B</h2>
+
+            <button id="btnIncB" class="btnScore" onClick="incB();">+</button>
+
+            <h3 id="btnScoreB" class="txtScore">0</h3>
+            
+            <button id="btnDecB" class="btnScore" onClick="decB();">-</button>
+
+        </div>
+    </div>
+</body>
+</html>
